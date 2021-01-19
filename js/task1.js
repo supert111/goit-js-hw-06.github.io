@@ -17,7 +17,7 @@ console.log(getUserNames(users));
 const getUsersWithEyeColor = (users, color) => {
  const usersName = users
   .filter(user => user.eyeColor === color)
-  .map(user => user.name)
+  //.map(user => user.name)
   return usersName;
 };
 
@@ -41,8 +41,8 @@ console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazq
 
 const getInactiveUsers = users => {
 const usersIsActive = users.filter(user => !user.isActive);
-const usersName = usersIsActive.map(user => user.name);
-return usersName;
+//const usersName = usersIsActive.map(user => user.name);
+return usersIsActive;
 };
 
 console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
@@ -53,8 +53,8 @@ console.log(getInactiveUsers(users)); // [объект Moore Hensley, объек
 
 const getUserWithEmail = (users, email) => {
   
-const userEmail = users.find(user => user.email === email);
-return Object.assign({}, [userEmail.name]);;
+  return users.find(user => user.email === email);
+//return Object.assign({}, [userEmail.name]);;
 };
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
@@ -66,9 +66,9 @@ console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект п
 //категорию от min до max лет (поле age).
 
 const getUsersWithAge = (users, min, max) => {
-  const usersSearchAge = users.filter(user => user.age > min && user.age < max);
-  const usersName = usersSearchAge.map(user => user.name);
-  return usersName;
+  return users.filter(user => user.age > min && user.age < max);
+  //const usersName = usersSearchAge.map(user => user.name);
+  //return usersName;
 };
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
